@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="(car, key) in cars" :key="key">
+      <li class="list-group-item" v-for="(car, key) in cars" :key="key">
         <p>brand: {{ car.brand }}</p>
         <p>model: {{ car.model }}</p>
         <p>year: {{ car.year }}</p>

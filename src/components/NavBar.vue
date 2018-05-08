@@ -6,6 +6,9 @@
         <li class="nav-item active">
           <router-link class="nav-item nav-link" to="cars">Cars <span class="sr-only">(current)</span></router-link>
         </li>
+        <li class="nav-item active">
+          <router-link class="nav-item nav-link" to="add">Add car <span class="sr-only">(current)</span></router-link>
+        </li>
       </ul>
   </div>
 </nav>
