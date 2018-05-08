@@ -12,8 +12,8 @@
       <div class="form-group">
         <label for="select">Select Year</label>
         <select class="select form-control" v-model="car.year">
-            <option :value="year" v-for="(year, key) in allYears" :key="key" >{{ year }}</option>
-        </select>
+                  <option :value="year" v-for="(year, key) in allYears" :key="key" >{{ year }}</option>
+              </select>
       </div>
       <div class="form-group">
         <label for="maxSpeed">Max speed</label>
@@ -41,6 +41,7 @@
         <label for="hybrid">Hybrid</label>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="button" @click="resetForm()" class="btn btn-primary">Reset</button>
     </form>
   </div>
 </template>
@@ -79,10 +80,16 @@
         this.car.numberOfDoors = parseInt(this.car.numberOfDoors)
         cars.addCar(this.car)
           .then(response => {
-          this.$router.push('/cars')
+            this.$router.push('/cars')
           }).catch(error => {
             console.log('error', error)
           })
+      },
+      resetForm() {
+        Object.keys(this.car).forEach((key, value) => {
+          this.car[key] = ''
+        })
+        
       }
     }
   }
